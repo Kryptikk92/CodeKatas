@@ -7,8 +7,19 @@ import java.util.Comparator;
 public class RomanNumbers {
 
 	private enum L {
-		IV("IV", 4), IX("IX", 9), XL("XL", 40), XC("XC", 90), CD("CD", 400), CM("CM", 900), I("I", 1), V("V", 5),
-		X("X", 10), L("L", 50), C("C", 100), D("D", 500), M("M", 1000);
+		IV("IV", 4), 
+		IX("IX", 9), 
+		XL("XL", 40), 
+		XC("XC", 90), 
+		CD("CD", 400), 
+		CM("CM", 900), 
+		I("I", 1), 
+		V("V", 5),
+		X("X", 10), 
+		L("L", 50), 
+		C("C", 100), 
+		D("D", 500), 
+		M("M", 1000);
 
 		private String n;
 		private int v;
