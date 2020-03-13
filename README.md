@@ -1,7 +1,7 @@
 # CodeKatas
 
 ## [Roman Numbers](src/main/java/de/kryptikk/codekatas/roman)
-Small library to convert roman numbers (e.g. "MCMXI") to arabian numbers ("1911").
+Small library to convert roman numbers (e.g. "MCMXI") to arabian numbers ("1911") and vice versa.
 
 Roman numbers need to follow conventions, no checking for illegal constellations.
 
