@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class RomanNumbers {
 
-	private enum L {
+	private enum RomanLiteral {
 		IV("IV", 4), 
 		IX("IX", 9), 
 		XL("XL", 40), 
@@ -21,45 +21,45 @@ public class RomanNumbers {
 		D("D", 500), 
 		M("M", 1000);
 
-		private String n;
-		private int v;
+		private String name;
+		private int value;
 
-		private L(String n, int v) {
-			this.n = n;
-			this.v = v;
+		private RomanLiteral(String n, int v) {
+			this.name = n;
+			this.value = v;
 		}
 
 		public int val() {
-			return v;
+			return value;
 		}
 	}
 
 	public static int romanToArab(String i) {
-		int a = 0;
-		for (L r : L.values()) {
-			int n = i.split(r.n, -1).length - 1;
-			a += n * r.v;
-			i = i.replaceAll(r.n, "");
+		int arab = 0;
+		for (RomanLiteral r : RomanLiteral.values()) {
+			int occurences = i.split(r.name, -1).length - 1;
+			arab += occurences * r.value;
+			i = i.replaceAll(r.name, "");
 		}
-		return a;
+		return arab;
 	}
 
 	public static String arabToRoman(int arab) {
-		String roman = "";
+		StringBuilder roman = new StringBuilder();
 		int i = 0;
-		L[] ls = L.values();
-		Arrays.sort(ls, Comparator.comparing(L::val));
-		Collections.reverse(Arrays.asList(ls));
-		while (arab > 0 && i < ls.length) {
-			L c = ls[i];
-			if (c.v <= arab) {
-				arab -= c.v;
-				roman += c;
+		RomanLiteral[] literals = RomanLiteral.values();
+		Arrays.sort(literals, Comparator.comparing(RomanLiteral::val));
+		Collections.reverse(Arrays.asList(literals));
+		while (arab > 0 && i < literals.length) {
+			RomanLiteral l = literals[i];
+			if (l.value <= arab) {
+				arab -= l.value;
+				roman.append(l);
 			} else {
 				i++;
 			}
 		}
-		return roman;
+		return roman.toString();
 	}
 
 }
