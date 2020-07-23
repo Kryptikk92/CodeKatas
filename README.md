@@ -27,3 +27,6 @@ Rules for Roman numbers:
 * Only 3 of the same kind can be put together: 
     * "MMM" => 3000 (allowed)
     * "XXXX" => 40 (not allowed, use "XL" for that)
+    
+## [Arc Lengths](src/main/java/de/kryptikk/codekatas/arclength)
+Small library to calculate the arclength of an arbitrary mathematical function.
